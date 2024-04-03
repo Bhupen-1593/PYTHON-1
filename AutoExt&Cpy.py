@@ -55,11 +55,19 @@ latest_date_J224_in=latest_date_J224.strftime("%A, %B %d, %Y")
 print(latest_date_J224_in)                                        # For debugging purpose
 
 # Filling 'from' box of the date section of webpage
+# Date input from to extract data from CRMS
 css_selector=f'[title="{(latest_date_J224_in)}"]'
+month=f'//div[@title="{latest_date_J224.strftime("%B, %Y")}"]'
+print(month)
 print(css_selector)
-calender1_button=driver.find_element(By.ID,"ContentPlaceHolder1_imgCalFromDate")
-calender1_button.click()
-from_date_input=driver.find_element(By.CSS_SELECTOR,css_selector).click()
+calendar_button=driver.find_element(By.ID,"ContentPlaceHolder1_imgCalFromDate")
+calendar_button.click()
+calender1_title_button=driver.find_element(By.ID,"ContentPlaceHolder1_calendarButtonExtender_title")
+calender1_title_button.click()
+from_date_input_month=driver.find_element(By.XPATH,month)
+from_date_input_month.click()
+from_date_input=driver.find_element(By.CSS_SELECTOR,css_selector)
+from_date_input.click()
 
 # Filling 'to' box of the date section of webpage
 calender2_button=driver.find_element(By.ID,"ContentPlaceHolder1_imgCalToDate")
