@@ -1,1 +1,2 @@
 # PYTHON
+These code files automatically download the excel file from the CRMS website of a specific client. The challenge was that the data output on the CRMS web portal of 'Suzlon' is available for download in PDF/Excel format only. To tackel this problem Selenium was used to interact with site elements, Jupyter Notebook was used to write code and analyse the downloaded data from the master sheet.
