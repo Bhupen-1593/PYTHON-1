@@ -39,7 +39,7 @@ driver.get('https://crms.suzlon.com/aspx/DailyGenerationReport.aspx')
 Customer_dd=Select(driver.find_element(By.CSS_SELECTOR,'[name="ctl00$ContentPlaceHolder1$DDLCustomer"]'))
 Customer_dd.select_by_visible_text('***** ******** ** ****')        # Info redacted for privacy reasons
 
-# Using master worksheet to finf out latest date of the data retrieved then using that dsate to download further data from the site
+# Using master worksheet to find out latest date of the data retrieved then using that dsate to download further data from the site
 from openpyxl import load_workbook,workbook
 master_wb=openpyxl.load_workbook(r"D:\BHUPEN PCC\client data\CRMS Daily\Gee Cee CRMS\WTG Analysis - Copy.xlsm",data_only=True)
 master_wb_ld=master_wb['LatestDate'] #master_wb_gen is a dataframe
